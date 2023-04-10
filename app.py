@@ -6,6 +6,7 @@ from urllib.request import urlopen as uReq
 import logging
 logging.basicConfig(filename="scrapper.log" , level=logging.INFO)
 import pymongo
+import os
 
 app = Flask(__name__)
 
@@ -90,5 +91,5 @@ def index():
         return render_template('index.html')
 
 
-# if __name__=="__main__":
-#     app.run(host=os.getenv())
+if __name__=="__main__":
+    app.run(host="0.0.0.0",port=5000)
